@@ -7,7 +7,7 @@
 #' serve(new_data_edit_block(), data = list(.data = head(mtcars)))
 #' serve(new_data_edit_block(), data = list(.data = data.frame(stat = c("30", "40 (50)"), pattern = c("{mean}", {"{n} ({%})"}))))
 #' }
-new_data_edit_block <- function() {
+new_data_edit_block <- function(...) {
   ui <- function(id) {
     tagList(dataEditUI(NS(id, "edit-ui")))
   }
