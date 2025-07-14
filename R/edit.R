@@ -1,7 +1,34 @@
+#' Edit cells in a data frame
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' serve(new_data_edit_block(), data = list(.data = head(mtcars)))
+#' serve(new_data_edit_block(), data = list(.data = data.frame(stat = c("30", "40 (50)"), pattern = c("{mean}", {"{n} ({%})"}))))
+#' }
 new_data_edit_block <- function() {
-  ui <- function() {}
+  ui <- function(id) {
+    tagList(dataEditUI(NS(id, "edit-ui")))
+  }
 
-  server <- function() {}
+  server <- function(id, .data) {
+    moduleServer(id, function(input, output, session) {
+      edited_data <- dataEditServer(
+        "edit-ui",
+        data = .data,
+        col_edit = FALSE,
+        col_stretch = TRUE,
+        row_edit = FALSE
+      )
+      list(
+        expr = reactive({
+          edited_data()
+        }),
+        state = list()
+      )
+    })
+  }
 
   new_dataeditr_block(
     ui = ui,
