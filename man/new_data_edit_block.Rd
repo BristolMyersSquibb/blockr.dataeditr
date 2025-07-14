@@ -6,6 +6,9 @@
 \usage{
 new_data_edit_block(...)
 }
+\arguments{
+\item{...}{Forwarded to \code{\link[blockr.core:new_block]{blockr.core::new_block()}}}
+}
 \description{
 Edit cells in a data frame
 }

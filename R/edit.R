@@ -1,5 +1,7 @@
 #' Edit cells in a data frame
 #'
+#' @param ... Forwarded to [blockr.core::new_block()]
+#'
 #' @export
 #'
 #' @examples
