@@ -1,2 +1,4 @@
 ^blockr\.dataeditr\.Rproj$
 ^\.Rproj\.user$
+^[\.]?air\.toml$
+^\.vscode$
