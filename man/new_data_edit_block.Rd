@@ -4,7 +4,7 @@
 \alias{new_data_edit_block}
 \title{Edit cells in a data frame}
 \usage{
-new_data_edit_block()
+new_data_edit_block(...)
 }
 \description{
 Edit cells in a data frame
