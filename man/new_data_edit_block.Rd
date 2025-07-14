@@ -15,6 +15,12 @@ Edit cells in a data frame
 \examples{
 \dontrun{
 serve(new_data_edit_block(), data = list(.data = head(mtcars)))
-serve(new_data_edit_block(), data = list(.data = data.frame(stat = c("30", "40 (50)"), pattern = c("{mean}", {"{n} ({\%})"}))))
+serve(
+  new_data_edit_block(),
+  data = list(
+    .data = data.frame(stat = c("30", "40 (50)"),
+    pattern = c("{mean}", {"{n} ({\%})"}))
+  )
+)
 }
 }
