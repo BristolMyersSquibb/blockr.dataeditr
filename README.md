@@ -26,3 +26,13 @@ serve(
 ```
 
 <img src="man/figures/example-ui.png" alt="blockr.ui example" width="100%" />
+
+## Caveats
+
+This block requires the following development package versions to be installed:
+
+```r
+pak::pak("DillonHammill/DataEditR")
+pak::pak("DillonHammill/rhandsontable")
+```
+
