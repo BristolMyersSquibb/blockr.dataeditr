@@ -25,9 +25,9 @@ new_data_edit_block <- function(...) {
       edited_data <- dataEditServer(
         "edit-ui",
         data = .data,
-        col_edit = FALSE,
+        col_edit = TRUE,
         col_stretch = TRUE,
-        row_edit = FALSE
+        row_edit = TRUE
       )
       list(
         expr = reactive({
