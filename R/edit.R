@@ -1,5 +1,8 @@
 #' Edit cells in a data frame
 #'
+#' This block allows users to interactively edit data and download the output
+#' to disk.
+#'
 #' @param ... Forwarded to [blockr.core::new_block()]
 #'
 #' @export
@@ -17,7 +20,10 @@
 #' }
 new_data_edit_block <- function(...) {
   ui <- function(id) {
-    tagList(dataEditUI(NS(id, "edit-ui")))
+    tagList(
+      dataEditUI(NS(id, "edit-ui")),
+      dataOutputUI(NS(id, "output-ui"))
+    )
   }
 
   server <- function(id, .data) {
@@ -29,6 +35,14 @@ new_data_edit_block <- function(...) {
         col_stretch = TRUE,
         row_edit = TRUE
       )
+
+      dataOutputServer(
+        "output-ui",
+        data = edited_data,
+        write_fun = "write_csv",
+        hover_text = "Download"
+      )
+
       list(
         expr = reactive({
           edited_data()
