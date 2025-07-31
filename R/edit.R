@@ -39,7 +39,7 @@ new_data_edit_block <- function(...) {
       dataOutputServer(
         "output-ui",
         data = edited_data,
-        write_fun = "write_csv",
+        write_fun = write_csv,
         hover_text = "Download"
       )
 
