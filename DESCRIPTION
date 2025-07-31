@@ -16,3 +16,6 @@ Imports:
     DataEditR,
     readr,
     shiny
+Remotes:
+    DillonHammill/DataEditR,
+    DillonHammill/rhandsontable
