@@ -3,5 +3,4 @@
 export(new_data_edit_block)
 import(DataEditR)
 import(blockr.core)
-import(readr)
 import(shiny)

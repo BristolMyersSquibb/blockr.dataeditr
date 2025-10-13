@@ -21,8 +21,7 @@
 new_data_edit_block <- function(...) {
   ui <- function(id) {
     tagList(
-      dataEditUI(NS(id, "edit-ui")),
-      dataOutputUI(NS(id, "output-ui"))
+      dataEditUI(NS(id, "edit-ui"))
     )
   }
 
@@ -34,13 +33,6 @@ new_data_edit_block <- function(...) {
         col_edit = TRUE,
         col_stretch = TRUE,
         row_edit = TRUE
-      )
-
-      dataOutputServer(
-        "output-ui",
-        data = edited_data,
-        write_fun = write_csv,
-        hover_text = "Download"
       )
 
       list(
