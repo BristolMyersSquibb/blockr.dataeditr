@@ -27,12 +27,24 @@ new_data_edit_block <- function(...) {
 
   server <- function(id, .data) {
     moduleServer(id, function(input, output, session) {
+      col_options <- isolate({
+        opts <- list()
+        if (".bold" %in% colnames(.data())) {
+          opts$.bold <- TRUE
+        }
+        if (".indent" %in% colnames(.data())) {
+          opts$.indent <- unique(.data()$.indent)
+        }
+        opts
+      })
+
       edited_data <- dataEditServer(
         "edit-ui",
         data = .data,
         col_edit = TRUE,
         col_stretch = TRUE,
-        row_edit = TRUE
+        row_edit = TRUE,
+        col_options = col_options
       )
 
       list(

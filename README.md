@@ -20,9 +20,9 @@ serve(
   data = list(
     .data = data.frame(
       stat = c("30", "40 (50)"),
-      pattern = c("{mean}", {
-        "{n} ({%})"
-      })
+      pattern = c("{mean}", {"{n} ({%})"}),
+      .bold = c(T, F),
+      .indent = c(1, 2)
     )
   )
 )
