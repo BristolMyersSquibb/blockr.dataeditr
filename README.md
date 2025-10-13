@@ -12,6 +12,9 @@ pak::pak("cynkra/blockr.dataeditr")
 ## Usage
 
 ```r
+library(blockr.ui)
+pkgload::load_all()
+
 serve(
   new_data_edit_block(),
   data = list(
