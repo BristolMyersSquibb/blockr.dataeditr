@@ -14,7 +14,6 @@ Config/testthat/edition: 3
 Imports: 
     blockr.core,
     DataEditR,
-    dplyr,
     shiny
 Remotes:
     DillonHammill/DataEditR,
